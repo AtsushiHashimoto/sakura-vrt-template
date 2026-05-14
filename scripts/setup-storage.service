@@ -1,0 +1,15 @@
+[Unit]
+Description=VRT Storage Setup (dm-cache workspace + NVMe scratch)
+# Must run before Docker so Docker picks up the correct data-root.
+Before=docker.service
+After=local-fs.target
+DefaultDependencies=no
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/opt/vrt/setup_storage.sh
+ExecStop=/opt/vrt/shutdown_storage.sh
+
+[Install]
+WantedBy=multi-user.target
