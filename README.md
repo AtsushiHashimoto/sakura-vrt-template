@@ -2,14 +2,14 @@
 
 さくらインターネット 高火力 VRT（H100 GPU）を使った研究環境のセットアップテンプレートです。
 
-インターンや研究者が GPU クラウドを効率よく・安全に使うための手順書・スクリプト・Issue テンプレートをまとめています。
+メンバーや研究者が GPU クラウドを効率よく・安全に使うための手順書・スクリプト・Issue テンプレートをまとめています。
 
 ---
 
 ## このテンプレートでできること
 
 - GPU 環境（CUDA + Docker）を焼き込んだマイアーカイブの作成
-- インターンのオンボーディング・オフボーディング管理（GitHub Issue テンプレート）
+- メンバーのオンボーディング・オフボーディング管理（GitHub Issue テンプレート）
 - VSCode Dev Container または CLI（Claude Code, Codex 等）での開発
 - GHCR（GitHub Container Registry）を使ったコンテナイメージ管理
 - 東大 miyabi 等の HPC クラスターへの移植（Apptainer）
@@ -22,14 +22,14 @@
 .
 ├── .github/
 │   └── ISSUE_TEMPLATE/
-│       ├── onboarding.md       インターン受け入れ時に作成
-│       └── offboarding.md      インターン終了時に作成（オンボーディング時に事前作成）
+│       ├── onboarding.md       メンバー受け入れ時に作成
+│       └── offboarding.md      メンバー終了時に作成（オンボーディング時に事前作成）
 ├── docs/
 │   └── ja/                     日本語版ドキュメント
 │       ├── admin/              管理者向け（1回だけやる作業）
 │       │   ├── 01-project-setup.md
 │       │   └── 02-base-image-setup.md
-│       └── user/               インターン・研究者向け
+│       └── user/               メンバー・研究者向け
 │           ├── 00-overview.md
 │           ├── 01-server-creation.md
 │           ├── 02-ssh-connection.md
@@ -54,7 +54,7 @@
 1. [プロジェクト・ユーザー作成](docs/ja/admin/01-project-setup.md)
 2. [マイアーカイブ作成](docs/ja/admin/02-base-image-setup.md)
 
-### インターン（毎回）
+### メンバー（毎回）
 
 1. [全体構成を理解する](docs/ja/user/00-overview.md) ← **最初に読む**
 2. [サーバーを起動する](docs/ja/user/01-server-creation.md)
