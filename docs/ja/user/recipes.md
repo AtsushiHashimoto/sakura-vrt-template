@@ -193,7 +193,7 @@ scp sakura-vrt:/workspace/checkpoints/checkpoint_epoch100.pt ./
 
 ---
 
-## 10. NVMe キャッシュの活用（H100 専用・V100 では不要）
+## 10. NVMe キャッシュの活用（H100 専用・V100 では不可）
 
 H100 では `/mnt/nvme` に 6.9 TiB の高速 NVMe があります。停止で消えますが、速度が最優先の用途に使えます。
 
