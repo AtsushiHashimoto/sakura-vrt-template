@@ -17,7 +17,7 @@ SSH 接続時に追加ディスクの自動セットアップ（dm-cache）が�
 ## 2. プロジェクトを clone
 
 ```bash
-git clone https://github.com/sinix/<your-project>.git
+git clone https://github.com/<your-org>/<your-project>.git
 cd <your-project>
 ```
 
@@ -33,7 +33,7 @@ docker run --gpus all \
   -v $(pwd):/workspace/src \
   -w /workspace/src \
   -it --rm \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   bash
 ```
 
@@ -65,7 +65,7 @@ docker run --gpus all \
   -w /workspace/src \
   -d \
   --name training \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   python train.py
 
 # Check logs

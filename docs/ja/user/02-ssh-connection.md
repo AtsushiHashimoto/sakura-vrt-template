@@ -8,7 +8,7 @@ VSCode 派・ターミナル派共通の手順です。
 
 ```bash
 # Generate ED25519 key pair
-ssh-keygen -t ed25519 -C "your-name@sinix.com"
+ssh-keygen -t ed25519 -C "your-name@<your-domain>"
 # Save to default location: ~/.ssh/id_ed25519
 
 # Display public key to register in Sakura Cloud

@@ -99,9 +99,9 @@ sudo chmod 440 /etc/sudoers.d/ubuntu-nopasswd
 
 ```bash
 sudo mkdir -p /opt/vrt
-sudo curl -fsSL https://raw.githubusercontent.com/sinix/<your-repo>/main/scripts/setup_storage.sh \
+sudo curl -fsSL https://raw.githubusercontent.com/<your-org>/<your-repo>/main/scripts/setup_storage.sh \
   -o /opt/vrt/setup_storage.sh
-sudo curl -fsSL https://raw.githubusercontent.com/sinix/<your-repo>/main/scripts/shutdown_storage.sh \
+sudo curl -fsSL https://raw.githubusercontent.com/<your-org>/<your-repo>/main/scripts/shutdown_storage.sh \
   -o /opt/vrt/shutdown_storage.sh
 sudo chmod +x /opt/vrt/setup_storage.sh /opt/vrt/shutdown_storage.sh
 ```
@@ -119,7 +119,7 @@ sudo chmod +x /opt/vrt/setup_storage.sh /opt/vrt/shutdown_storage.sh
 ## 8. systemd サービスの登録
 
 ```bash
-sudo curl -fsSL https://raw.githubusercontent.com/sinix/<your-repo>/main/scripts/setup-storage.service \
+sudo curl -fsSL https://raw.githubusercontent.com/<your-org>/<your-repo>/main/scripts/setup-storage.service \
   -o /etc/systemd/system/setup-storage.service
 
 # または手動でコピー
@@ -155,7 +155,7 @@ sudo dmsetup status vrt-workspace
 
 1. コントロールパネルでサーバーを**停止**
 2. サーバーの「ディスク」タブ → 「アーカイブに変換」
-3. アーカイブ名：`sinix-base-v1-ubuntu2404`（日付不要、バージョン番号で管理）
+3. アーカイブ名：`base-v1-ubuntu2404`（日付不要、バージョン番号で管理）
 4. 変換完了後、元のサーバーを**削除**
 
 > アーカイブは約1円/GB/日で保存できます（20GB で月約600円）。
@@ -180,9 +180,9 @@ sudo dmsetup status vrt-workspace
 
 ```bash
 gh issue create \
-  --title "マイアーカイブ旧バージョン削除: sinix-base-v{N}-ubuntu2404" \
+  --title "マイアーカイブ旧バージョン削除: base-v{N}-ubuntu2404" \
   --body "新バージョン v{N+1} の動作確認が取れたため、v{N} を削除する。
-- [ ] さくらのクラウド コントロールパネル → アーカイブ → \`sinix-base-v{N}-ubuntu2404\` を削除" \
+- [ ] さくらのクラウド コントロールパネル → アーカイブ → \`base-v{N}-ubuntu2404\` を削除" \
   --label "chore"
 ```
 

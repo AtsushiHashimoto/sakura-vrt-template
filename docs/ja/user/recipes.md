@@ -14,7 +14,7 @@ docker run --rm \
   --gpus all \
   --shm-size 16g \
   -v /workspace:/workspace \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   python train.py --output-dir /workspace/checkpoints \
 && sudo shutdown -h now
 ```
@@ -33,7 +33,7 @@ docker run --rm \
   --gpus all \
   --shm-size 16g \
   -v /workspace:/workspace \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   python train.py \
     --resume /workspace/checkpoints/checkpoint_epoch50.pt \
     --output-dir /workspace/checkpoints \
@@ -50,7 +50,7 @@ docker run --rm \
 docker run --rm \
   --gpus all \
   -v /workspace:/workspace \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   bash -c "
     python train.py --lr 1e-3 --output-dir /workspace/results/lr1e-3 &&
     python train.py --lr 3e-4 --output-dir /workspace/results/lr3e-4 &&
@@ -71,7 +71,7 @@ docker run --rm \
   --shm-size 64g \
   --network host \
   -v /workspace:/workspace \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   torchrun \
     --nproc_per_node=4 \
     train.py --output-dir /workspace/checkpoints \
@@ -103,8 +103,8 @@ Dockerfile を変更したときの手順。VRT サーバー上で実行しま�
 
 ```bash
 # On VRT host
-docker build -t ghcr.io/sinix/<your-project>:v1.1 .
-docker push ghcr.io/sinix/<your-project>:v1.1
+docker build -t ghcr.io/<your-org>/<your-project>:v1.1 .
+docker push ghcr.io/<your-org>/<your-project>:v1.1
 ```
 
 `devcontainer.json` のイメージタグを `v1.1` に更新してチームに共有します。
@@ -121,7 +121,7 @@ export APPTAINER_DOCKER_USERNAME=<YOUR_GITHUB_USERNAME>
 export APPTAINER_DOCKER_PASSWORD=<YOUR_PAT>
 
 # Pull and convert GHCR image to .sif (first time only)
-apptainer pull docker://ghcr.io/sinix/<your-project>:v1.0
+apptainer pull docker://ghcr.io/<your-org>/<your-project>:v1.0
 
 # Submit SLURM job
 sbatch job.sh
@@ -152,7 +152,7 @@ VSCode で開発した内容をそのまま CLI で実行できます。同じ�
 
 | devcontainer.json | docker run |
 |---|---|
-| `"image": "ghcr.io/sinix/proj:v1.0"` | `ghcr.io/sinix/proj:v1.0` |
+| `"image": "ghcr.io/<your-org>/proj:v1.0"` | `ghcr.io/<your-org>/proj:v1.0` |
 | `"runArgs": ["--gpus", "all"]` | `--gpus all` |
 | `"mounts": ["source=/workspace,target=/workspace,type=bind"]` | `-v /workspace:/workspace` |
 | `"runArgs": ["--shm-size", "16g"]` | `--shm-size 16g` |
@@ -221,7 +221,7 @@ docker run --rm \
   --gpus all \
   -v /workspace:/workspace \
   -v /mnt/nvme:/nvme \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   python train.py \
     --data-dir /nvme/dataset \
     --output-dir /workspace/checkpoints \

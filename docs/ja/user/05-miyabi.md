@@ -9,7 +9,7 @@ VRT で開発・小規模実験が完了し、東大 miyabi（JCAHPC）で大規
 miyabi は HPC クラスター環境です。Docker は使えませんが、**Apptainer** を使うことで GHCR の Docker イメージをそのまま実行できます。
 
 ```
-GHCR（ghcr.io/sinix/<project>:v1.0）
+GHCR（ghcr.io/<your-org>/<project>:v1.0）
         ↓ apptainer pull
 miyabi 上の .sif ファイル
         ↓ apptainer exec --nv
@@ -35,7 +35,7 @@ export APPTAINER_DOCKER_PASSWORD=<YOUR_PAT>
 
 # Pull and convert Docker image to .sif
 apptainer pull \
-  docker://ghcr.io/sinix/<your-project>:v1.0
+  docker://ghcr.io/<your-org>/<your-project>:v1.0
 
 # Creates: your-project_v1.0.sif
 ```

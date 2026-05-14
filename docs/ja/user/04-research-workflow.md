@@ -60,7 +60,7 @@ torch.save({
 ```bash
 # On VRT host (outside Docker): train inside container, then shut down
 docker run --gpus all -v /workspace:/workspace \
-  ghcr.io/sinix/<your-project>:v1.0 \
+  ghcr.io/<your-org>/<your-project>:v1.0 \
   python train.py --output-dir /workspace/checkpoints \
 && sudo shutdown -h now
 ```
@@ -80,8 +80,8 @@ usacloud server shutdown <server-name> --zone=is1a
 
 ```bash
 # On VRT server (outside Docker)
-docker build -t ghcr.io/sinix/<your-project>:v1.1 .
-docker push ghcr.io/sinix/<your-project>:v1.1
+docker build -t ghcr.io/<your-org>/<your-project>:v1.1 .
+docker push ghcr.io/<your-org>/<your-project>:v1.1
 ```
 
 `devcontainer.json` のイメージタグを更新してチームに共有します。

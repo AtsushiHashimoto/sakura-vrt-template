@@ -24,7 +24,7 @@ VSCode または Cursor に以下をインストールします。
 VSCode のターミナルで：
 
 ```bash
-git clone https://github.com/sinix/<your-project>.git
+git clone https://github.com/<your-org>/<your-project>.git
 cd <your-project>
 ```
 
@@ -36,7 +36,7 @@ cd <your-project>
 
 ```json
 {
-  "image": "ghcr.io/sinix/<your-project>:v1.0",
+  "image": "ghcr.io/<your-org>/<your-project>:v1.0",
   "runArgs": [
     "--gpus", "all",
     "--shm-size", "16g"
