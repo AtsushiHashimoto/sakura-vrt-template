@@ -63,7 +63,7 @@
 
 GitHub リポジトリで以下の Issue テンプレートを使って作成します。
 
-- **オンボーディング Issue**：メンバー開始時に作成（`.github/ISSUE_TEMPLATE/onboarding.md`）
+- **オンボーディング Issue**：新規メンバー参加時に作成（`.github/ISSUE_TEMPLATE/onboarding.md`）
 - **オフボーディング Issue**：オンボーディング時に事前作成し、終了日をマイルストーンに設定（`.github/ISSUE_TEMPLATE/offboarding.md`）
 
 ---
