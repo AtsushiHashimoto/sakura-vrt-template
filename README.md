@@ -25,8 +25,8 @@
 .
 ├── .github/
 │   └── ISSUE_TEMPLATE/
-│       ├── onboarding.md       メンバー受け入れ時に作成
-│       └── offboarding.md      メンバー終了時に作成（オンボーディング時に事前作成）
+│       ├── onboarding.md       新規メンバー参加時に作成
+│       └── offboarding.md      メンバー離脱時に作成（オンボーディング時に事前作成）
 ├── docs/
 │   └── ja/                     日本語版ドキュメント
 │       ├── admin/              管理者向け（1回だけやる作業）
